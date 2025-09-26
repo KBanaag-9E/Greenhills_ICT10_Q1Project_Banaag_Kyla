@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Recommended meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <title>Delivery | Mr Choy</title>
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+        <!-- Bootstrap Setup -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- External CSS -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+
+        <py-script src="order.py"></py-script>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://mrchoy.co.uk/">Mr Choy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"></button>
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Menu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="order.html">Delivery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex">
+                    <button onclick="location.href='https://www.facebook.com/mrchoyuk/';"><i class="fa fa-facebook-square" style="font-size: 32px; color:white; padding-right: 10px;"></i></button>
+                    <button onclick="location.href='https://twitter.com/MrChoyUK';"><i class="fa fa-twitter-square" style="font-size: 32px; color:white; margin-right: 10px;"></i></button>
+                </div>
+                
+            </div>
+        </div>
+        </nav>
+
+        <h1 class="container-fluid header mt-3">Food Ordering System</h1>
+        <div class="container-fluid d-flex">
+
+            <div class="container col-sm-7" id="menu">
+            <h2 class="mb-3">Menu</h2>
+                <div class="row">
+                    
+                    <div class="col-sm-5" id="meals">
+                        <form>
+                        <h4>Main Dishes</h4>
+
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Main Dish</th>
+                                    <th>Price (₱)</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="f1" value="433.50"></td>
+                                    <td>Mushroom Fried Rice</td>
+                                    <td>433.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="f2" value="461.50"></td>
+                                    <td>Mixed Vegetable Fried Rice</td>
+                                    <td>461.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="f3" value="461.50"></td>
+                                    <td>Chicken Fried Rice</td>
+                                    <td>461.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="f4" value="536.50"></td>
+                                    <td>Roast Duck with Plum Sauce</td>
+                                    <td>536.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="f5" value="498.99"></td>
+                                    <td>Ribs in Hoi Sin Sauce</td>
+                                    <td>498.99</td>
+                                </tr>
+                            </table>
+
+                        </form>
+                    </div>
+
+                    <div class="col-sm-4" id="drinks">
+                        <form>
+                        <h4>Drinks</h4>
+
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Drink</th>
+                                    <th>Price (₱)</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="d1" value="37.50"></td>
+                                    <td>Coke</td>
+                                    <td>37.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="d2" value="37.50"></td>
+                                    <td>Coke Zero</td>
+                                    <td>37.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="d3" value="37.50"></td>
+                                    <td>Sprite</td>
+                                    <td>37.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="d4" value="37.50"></td>
+                                    <td>Sprite Zero</td>
+                                    <td>37.50</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="d5" value="15.50"></td>
+                                    <td>Water</td>
+                                    <td>15.50</td>
+                                </tr>
+                            </table>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mt-3" id="customer-info">
+                <h2 class="mb-3">Customer Details</h2>
+                <form>
+                    <label for="fName" class="form-label">Full Name:</label> <br>
+                    <input type="text" id="fName" class="col-sm-5" placeholder="Enter full name"> <br>
+                    <label for="address" class="form-label">Address:</label> <br>
+                    <input type="text" id="address" class="col-sm-5" placeholder="Enter home address"> <br>
+                    <label for="number" class="form-label">Contact Number:</label> <br>
+                    <input type="number" id="number" class="col-sm-5" placeholder="Enter phone number">
+                </form>
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-center mt-3">
+            <input type="button" class="btn btn-danger ms-3 col-sm-5" style="font-size: large;" py-click="ordering_form" value="ORDER NOW">
+        </div>
+
+        <div id="output" class="container-fluid text-center mt-4"></div>
+
+    </body>
+</html>
